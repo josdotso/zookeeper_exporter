@@ -3,7 +3,7 @@ FROM golang:1.9.2-alpine3.6 AS build
 
 # Install tools required to build the project
 # We need to run `docker build --no-cache .` to update those dependencies
-RUN apk add --no-cache git
+RUN apk add --no-cache gcc musl-dev git
 RUN go get github.com/golang/dep/cmd/dep
 
 # Gopkg.toml and Gopkg.lock lists project dependencies
